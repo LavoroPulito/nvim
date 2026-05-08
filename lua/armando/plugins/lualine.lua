@@ -61,6 +61,11 @@ return {
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
           },
+          {
+            require("noice").api.status.mode.get,
+            cond = require("noice").api.status.mode.has,
+            color = { color = "#ff9e64" }, -- Un bel colore arancione per le macro
+          },
           { "encoding" },
           { "fileformat" },
           { "filetype" },
