@@ -41,3 +41,13 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    vim.opt_local.foldmethod = "expr"
+    vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
+    vim.opt_local.foldenable = false
+    vim.opt_local.foldlevel = 99
+  end,
+})
